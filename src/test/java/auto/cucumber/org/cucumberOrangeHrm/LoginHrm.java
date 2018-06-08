@@ -7,6 +7,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 
+import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
@@ -55,11 +56,11 @@ public class LoginHrm {
 //		}
 
 		
-		@Then("^User should be logged in$")
+		@And("^click on login button$")
 		public void check_login_done() {
 		    // Write code here that turns the phrase above into concrete actions
 			
-			driver.findElement(By.id("btnLogin")).click();
+			//driver.findElement(By.id("btnLogin")).click();
 		
 			String MyURL= "http://opensource.demo.orangehrmlive.com/index.php/dashboard";
 			String ActualURL= driver.getCurrentUrl();
@@ -85,6 +86,12 @@ public class LoginHrm {
 			
 			
 		}
-
+		
+		@Then("^User should be logged in successfully$")
+		public void check_login_() {
+		
+			driver.findElement(By.id("btnLogin")).click();
+		
+		}
 	
 }

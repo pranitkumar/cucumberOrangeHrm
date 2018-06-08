@@ -1,15 +1,13 @@
-Feature: HRM Login
+Feature: Positive HRM Login
   I want to use this template for my feature file
 
-  Scenario: Positive flows
+  Background: 
     Given I have site
-    Then I entered credentials Admin and admin
-    And User should be logged in
 
-  Scenario Outline: Negative flows
-    Given I have site
+  Scenario Outline: Positive flows
     When I entered credentials <username> and <password>
-    Then User should be logged in
+    And click on login button
+    Then User should be logged in successfully
 
     Examples: 
       | username | password    |
